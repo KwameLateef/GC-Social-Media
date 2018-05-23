@@ -1,5 +1,5 @@
 "use srtict";
-const userForm = {
+const expandOnFocus = {
     binding: {
         addThought: "&"
     },
@@ -11,7 +11,7 @@ const userForm = {
     </form>
     `
 };
-
+// Does ng-repeat go above?
 angular
     .module("myThought")
-    .component("userForm", )
+    .directive("expandOnFocus", expandOnFocus);

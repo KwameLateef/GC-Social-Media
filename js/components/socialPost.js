@@ -1,23 +1,27 @@
 "use strict";
-const thought = {
+const socialPost = {
     template:`
     <section>
-    <user-form add-thought=$ctrl.addThought(newUser);"></user-form>
-    <list thought-lst+"$ctrl.thoughtList></list>
+    <heading>Social Media</heading>
+   
+    <button ng-click="$ctrl.openForm();">Add New Blog</button>
+    <post-form add-post="$ctrl.addPost(newPost);"></post-form>
+    <post post-list="$ctrl.postList"></post>
     </section>
     `,
-    controller: function() {
+     
+    controller: function($element) {
         const vm = this;
-        vm.thoughtList = [];
-        vm.addThought = (newUser) => {
-            vm.thoughtList.push({
-                name: NewUser.name,
-                phone: newUser.phone
-            });
-        };
+        vm.postList = []; 
+        vm.addPost = (newPost) => {
+            vm.postList.push({
+                title: newPost.title,
+                words: newPost.words
+             });
+        }
     }
-};
 
+}
 angular   
-    .module("myThougths")
-    .component("thought", thought);
+    .module("myThought")
+    .component("socialPost", socialPost);
